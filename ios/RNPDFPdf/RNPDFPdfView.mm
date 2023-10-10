@@ -443,7 +443,11 @@ using namespace facebook::react;
 
         if (_pdfDocument && ([changedProps containsObject:@"path"] || [changedProps containsObject:@"enablePaging"])) {
             if (_enablePaging) {
-                [_pdfView usePageViewController:YES withViewOptions:@{UIPageViewControllerOptionSpineLocationKey:@(UIPageViewControllerSpineLocationMin),UIPageViewControllerOptionInterPageSpacingKey:@(_spacing)}];
+                if (_doublePage) {
+                    [_pdfView usePageViewController:YES withViewOptions:Nil];
+                } else {
+                    [_pdfView usePageViewController:YES withViewOptions:@{  :@(UIPageViewControllerSpineLocationMin),UIPageViewControllerOptionInterPageSpacingKey:@(_spacing)}];
+                }
             } else {
                 [_pdfView usePageViewController:NO withViewOptions:Nil];
             }
