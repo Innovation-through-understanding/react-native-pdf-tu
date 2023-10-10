@@ -461,7 +461,7 @@ using namespace facebook::react;
         
         if (_pdfDocument && ([changedProps containsObject:@"path"] || [changedProps containsObject:@"doublePage"])) {
             if (_doublePage) {
-                _pdfView.displayMode = kPDFDisplayTwoUpContinuous;
+                _pdfView.displayMode = kPDFDisplayTwoUp; // Continuous;
                 _pdfView.userInteractionEnabled = YES;
             } else {
                 _pdfView.displayMode = kPDFDisplaySinglePageContinuous;
