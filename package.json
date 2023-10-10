@@ -1,13 +1,13 @@
 {
-    "name": "react-native-pdf",
+    "name": "react-native-pdf-tu",
     "version": "6.7.1",
-    "summary": "A react native PDF view component",
+    "summary": "A react native PDF view component - Patched for 2-side-up-support on ios",
     "description": "A react native PDF view component, support ios and android platform",
     "main": "index.js",
     "typings": "./index.d.ts",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/wonday/react-native-pdf.git"
+        "url": "git+https://github.com/Innovation-through-understanding/react-native-pdf-tu.git"
     },
     "keywords": [
         "react-component",
@@ -19,13 +19,13 @@
         "viewer"
     ],
     "author": {
-        "name": "Wonday",
-        "url": "https://github.com/wonday"
+        "name": "hbel",
+        "url": "https://github.com/hbel"
     },
     "license": "MIT",
-    "homepage": "https://github.com/wonday/react-native-pdf",
+    "homepage": "https://github.com/Innovation-through-understanding/react-native-pdf-tu",
     "bugs": {
-        "url": "https://github.com/wonday/react-native-pdf/issues"
+        "url": "https://github.com/Innovation-through-understanding/react-native-pdf-tu/issues"
     },
     "dependencies": {
         "crypto-js": "^3.2.0",

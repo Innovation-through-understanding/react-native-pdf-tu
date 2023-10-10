@@ -43,6 +43,7 @@ RCT_EXPORT_VIEW_PROPERTY(spacing, int);
 RCT_EXPORT_VIEW_PROPERTY(password, NSString);
 RCT_EXPORT_VIEW_PROPERTY(onChange, RCTBubblingEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(singlePage, BOOL);
+RCT_EXPORT_VIEW_PROPERTY(doublePage, BOOL);
 
 RCT_EXPORT_METHOD(supportPDFKit:(RCTResponseSenderBlock)callback)
 {

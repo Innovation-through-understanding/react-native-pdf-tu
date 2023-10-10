@@ -151,6 +151,10 @@ using namespace facebook::react;
         _singlePage = newProps.singlePage;
         [updatedPropNames addObject:@"singlePage"];
     }
+    if (_doublePage != newProps.doublePage) {
+        _doublePage = newProps.doublePage;
+        [updatedPropNames addObject:@"doublePage"];
+    }
     if (_showsHorizontalScrollIndicator != newProps.showsHorizontalScrollIndicator) {
         _showsHorizontalScrollIndicator = newProps.showsHorizontalScrollIndicator;
         [updatedPropNames addObject:@"showsHorizontalScrollIndicator"];
@@ -245,6 +249,7 @@ using namespace facebook::react;
     _singlePage = NO;
     _showsHorizontalScrollIndicator = YES;
     _showsVerticalScrollIndicator = YES;
+    _doublePage = NO;
 
     // init and config PDFView
     _pdfView = [[PDFView alloc] initWithFrame:CGRectMake(0, 0, 500, 500)];
@@ -448,6 +453,16 @@ using namespace facebook::react;
             if (_singlePage) {
                 _pdfView.displayMode = kPDFDisplaySinglePage;
                 _pdfView.userInteractionEnabled = NO;
+            } else {
+                _pdfView.displayMode = kPDFDisplaySinglePageContinuous;
+                _pdfView.userInteractionEnabled = YES;
+            }
+        }
+        
+        if (_pdfDocument && ([changedProps containsObject:@"path"] || [changedProps containsObject:@"doublePage"])) {
+            if (_doublePage) {
+                _pdfView.displayMode = kPDFDisplayTwoUpContinuous;
+                _pdfView.userInteractionEnabled = YES;
             } else {
                 _pdfView.displayMode = kPDFDisplaySinglePageContinuous;
                 _pdfView.userInteractionEnabled = YES;

@@ -38,6 +38,7 @@ export default class PdfView extends Component {
         page: PropTypes.number,
         currentPage: PropTypes.number,
         singlePage: PropTypes.bool,
+		doublePage: PropTypes.bool,
         onPageSingleTap: PropTypes.func,
         onScaleChanged: PropTypes.func,
     };
@@ -57,6 +58,7 @@ export default class PdfView extends Component {
         currentPage: -1,
         enablePaging: false,
         singlePage: false,
+		doublePage: false,
         onPageSingleTap: (page, x, y) => {
         },
         onScaleChanged: (scale) => {
